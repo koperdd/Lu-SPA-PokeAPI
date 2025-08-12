@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pokédex App
 
-## Getting Started
+A simple Pokémon browser built with **Next.js**, **Tailwind CSS**, and **PokéAPI**.  
+Includes search, filtering by type, sorting, favorites with optimistic UI updates, and a light/dark mode toggle that persists across sessions.
 
-First, run the development server:
+---
 
+## 🚀 Run Instructions
+
+1️⃣ Clone the Repository
 ```bash
+git clone https://github.com/yourusername/pokedex-app.git
+cd pokedex-app
+2️⃣ Install Dependencies
+bash
+Copy
+Edit
+npm install
+# or
+yarn install
+3️⃣ Run Development Server
+bash
+Copy
+Edit
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Visit http://localhost:3000 in your browser.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4️⃣ Build for Production
+bash
+Copy
+Edit
+npm run build
+npm run start
+🏗 Architecture Notes
+Framework
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Next.js 14 App Router for routing and SSR/SSG capabilities.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+React 18 with functional components and hooks.
 
-## Learn More
+Styling
 
-To learn more about Next.js, take a look at the following resources:
+Tailwind CSS with dark mode support via class strategy (dark: variants).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Global styles are in globals.css.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+State Management
 
-## Deploy on Vercel
+React useState/useEffect for local UI state.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+LocalStorage for favorites and theme persistence.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Optimistic UI updates for favorite toggles — UI updates instantly before API confirmation.
+
+Networking
+
+Uses native fetch API to call PokéAPI.
+
+Abort controllers prevent race conditions when switching filters quickly.
+
+Filters by type fetch an additional endpoint /type/{type}.
+
+Features Implemented
+
+Search Pokémon by name.
+
+Filter by type.
+
+Sort A→Z or Z→A.
+
+Pagination (36 Pokémon per page when not searching).
+
+Favorites with optimistic updates and rollback on failure.
+
+Dark/Light Mode toggle with persistence and cross-tab sync.
+
+Skeleton loading states for better UX during fetches.
+
+Error handling with retry button.
