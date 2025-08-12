@@ -4,6 +4,14 @@ import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
 
+interface TypePokemonEntry {
+  pokemon: {
+    name: string;
+    url: string;
+  };
+  slot: number;
+}
+
 type PokemonListItem = {
   name: string;
   url: string;
