@@ -8,7 +8,7 @@ Includes search, filtering by type, sorting, favorites with optimistic UI update
 ## 🚀 Run Instructions
 
 1️⃣ Clone the Repository
-cd pokedex-app
+cd Lu-SPA-PokeAPI
 2️⃣ Install Dependencies
 npm install
 # or
