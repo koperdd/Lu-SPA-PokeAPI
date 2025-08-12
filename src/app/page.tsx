@@ -165,7 +165,7 @@ function HomePageContent() {
     });
     const data = await res.json();
     const ids = data.pokemon.map((p: TypePokemonEntry) =>
-      parseInt(p.pokemon.url.split("/").filter(Boolean).pop())
+      parseInt(p.pokemon.url.split("/").filter(Boolean).pop() || "0")
     );
     setTypeCache((prev) => ({ ...prev, [type]: ids }));
     return ids;
