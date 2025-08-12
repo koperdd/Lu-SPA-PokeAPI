@@ -156,7 +156,7 @@ export default function HomePage() {
       signal: typeAbortController.current.signal,
     });
     const data = await res.json();
-    const ids = data.pokemon.map((p: any) =>
+    const ids = data.pokemon.map((p: TypePokemonEntry) =>
       parseInt(p.pokemon.url.split("/").filter(Boolean).pop())
     );
     setTypeCache((prev) => ({ ...prev, [type]: ids }));
