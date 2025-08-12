@@ -8,7 +8,6 @@ Includes search, filtering by type, sorting, favorites with optimistic UI update
 ## 🚀 Run Instructions
 
 1️⃣ Clone the Repository
-git clone https://github.com/yourusername/pokedex-app.git
 cd pokedex-app
 2️⃣ Install Dependencies
 npm install
