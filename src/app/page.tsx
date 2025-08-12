@@ -4,6 +4,14 @@ import { useEffect, useState, useRef, Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
 
+interface TypePokemonEntry {
+  pokemon: {
+    name: string;
+    url: string;
+  };
+  slot: number;
+}
+
 type PokemonListItem = {
   name: string;
   url: string;
@@ -156,7 +164,7 @@ function HomePageContent() {
       signal: typeAbortController.current.signal,
     });
     const data = await res.json();
-    const ids = data.pokemon.map((p: any) =>
+    const ids = data.pokemon.map((p: TypePokemonEntry) =>
       parseInt(p.pokemon.url.split("/").filter(Boolean).pop())
     );
     setTypeCache((prev) => ({ ...prev, [type]: ids }));
