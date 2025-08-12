@@ -8,29 +8,19 @@ Includes search, filtering by type, sorting, favorites with optimistic UI update
 ## 🚀 Run Instructions
 
 1️⃣ Clone the Repository
-```bash
 git clone https://github.com/yourusername/pokedex-app.git
 cd pokedex-app
 2️⃣ Install Dependencies
-bash
-Copy
-Edit
 npm install
 # or
 yarn install
 3️⃣ Run Development Server
-bash
-Copy
-Edit
 npm run dev
 # or
 yarn dev
 Visit http://localhost:3000 in your browser.
 
 4️⃣ Build for Production
-bash
-Copy
-Edit
 npm run build
 npm run start
 🏗 Architecture Notes
